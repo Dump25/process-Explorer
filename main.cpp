@@ -28,7 +28,6 @@ typedef struct _SYSTEM_PROCESS_INFO
 
 
 
-void init(string *);
 void findProcessInRingOfProc(string);
 BOOL ListProcessModules(DWORD);
 BOOL ListProcessThreads(DWORD);
@@ -47,14 +46,7 @@ int main(int argc,char *argv[])
 	{
 		return 1;
 	}
-	//cout << argv[0] << '\n';
-	//cout << argv[1] << '\n';
-	//cout << argv[2] << '\n';
 
-
-	//if (strcmp(nameOfProcess.c_str(), pe32.szExeFile) == 0)
-	//string nameOfProcess;
-	//init(&nameOfProcess);
 	if (strcmp(argv[1], "-list") == 0)
 	{
 		findProcessInRingOfProc(argv[2]);
@@ -81,12 +73,6 @@ int main(int argc,char *argv[])
 	return 0;
 }
 
-
-void init(string *str1)
-{
-	cout << "Enter name of the process: ";
-	cin >> *str1;
-}
 
 void findProcessInRingOfProc(string nameOfProcess)
 {
